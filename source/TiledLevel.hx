@@ -12,6 +12,7 @@ import flixel.addons.editors.tiled.TiledMap;
 import flixel.addons.editors.tiled.TiledObject;
 import flixel.addons.editors.tiled.TiledObjectGroup;
 import flixel.addons.editors.tiled.TiledTileSet;
+import flixel.FlxCamera;
 
 /**
  * ...
@@ -64,7 +65,9 @@ class TiledLevel extends TiledMap
 			var tilemap:FlxTilemap = new FlxTilemap();
 			tilemap.widthInTiles = width;
 			tilemap.heightInTiles = height;
-			tilemap.loadMap(tileLayer.tileArray, processedPath, tileSet.tileWidth, tileSet.tileHeight, FlxTilemap.AUTO, 1, 1, 1);
+			tilemap.loadMap(tileLayer.tileArray, processedPath, tileSet.tileWidth, tileSet.tileHeight, FlxTilemap.OFF, 1, 1, 1);
+
+			tilemap.setTileProperties(11, FlxObject.NONE);
 
 			if (tileLayer.properties.contains("nocollide"))
 			{
@@ -103,8 +106,11 @@ class TiledLevel extends TiledMap
 
 		switch (o.type.toLowerCase())
 		{
-		case "something":
+		case "player":
+			state.player = new Player(x, y);
+			state.add(state.player);
 
+			FlxG.camera.follow(state.player, FlxCamera.STYLE_TOPDOWN, 6);
 		}
 	}
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="16" tileheight="16" nextobjectid="1">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="16" tileheight="16" nextobjectid="4">
  <tileset firstgid="1" name="tiles" tilewidth="16" tileheight="16">
   <image source="../images/tiles.png" width="160" height="80"/>
   <tile id="0"/>
@@ -58,7 +58,10 @@
    <property name="tileset" value="tiles"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJzVlWuKwzAMhN39u4EcYO9/z26hBSOk0YysPCowIakjzWdp0jG02BvWlaFourvuMWJtd9E9B9Jp779lpjr8cKWnUD4vf1Yf5TiiV1ktpubV8xZ5eaXmmV5B+Ttqn+UZ9NzqQFpZ3R1sbER9Yd6p6DnCR6g3r9je18f/+nFW9znv5lphsPm3ieN3uv+so7yg8Gd9njle68/oj96LzsbW80LJy3LYs9+S5/vo6xFiVbg9vYhvZlQ8nenLGCw304cujoyNYfCYbF6Gw2OPfot4KrOGGOYa3QwdHvDOwTLYnAqD+g2OtCn6s9z2XCvfqup8RM8yfvvb5571s6rfal3xAst01v/1cK5qMP4/cnk1KgzMni59mfZVnhW9rP7hXLPaFe0qY6YB7bEszNl0xUp/bA4lX7R3hYHlQu8q7yDNClPl/BhvKH2snr/a4wpjpK9jlpQ+Z3uHeY64My1RzkhXlk+ZRVuT9U5Uk5m9Lv1ePnSmao9ZPYxHFQbEoZy1zcNqRxpWOCI9ykwwzFFuZq4QQ3V5udTIPIrmr6KXmZlKZD7z9iIutG+VU+FQ60dcXu5szqsM0bvZXLHzruhaYUA5lD4xeyqe7+CYNXXq7NQdaUa/sd7IPHNGVL8zZ5yzEqqmOzJV9DM57uCnlVzZO1f3rRrf7Lcj4gmBs0lA
+   eJzdWkFuxCAMjBJyantt///TbqVYmo4MjB28W/VgbZSAYeyxAbNt27bzITtIe8hxvT+v5wPetUusvbXZB30O0PvT7m2x7KLeHeZlz4Zph2drg7ZAjNZ3NY5z8K3B/GwO1WPe8cdBzw1+V49XhYV5rvaJzNfzo8rnCA7ktIJZ5ben02IF4wpzS9SmaK9R/O3wLWI/zn8mkRhH+85szDnH81WWp6s4o3AZ7XXS+1Po741XkY9mOj0cyNdqDGoszPyLa7Dpy/hBGWvU79jGeGa6ce4HvYvORcGBe5WT+rWBDhUH6sjYFf05amMYMP6wb4/LM93WD3FkOaXGIu4bGo3Z8+ssVhHHzCY9UfI7YmXfcWx49lBwmJ1wvAgWFYP5wNuroC08HErMevkpsoZijpi15z29ahc1N3ucnOXBaH7+ILy93ODNRR2nZ/9R/1GeZPl8yNf2O1/11loVW0/UmDD/vV82VvqY75Q+Ho6I39U9rXHKbKzqb2Ifb87RNS3Kw4qagceL6FoQ2ZNk9pJZia7N0XlV+OOufTM4qri10h+KDXAdtFxqOWk1voiNcc+r+pL3rdE8VuUTby+n8qsy7jO6M5zA2koFjsx54k4tsSr2oxzJ+uMZHIjgWFG3yay/ytl1Vo+4a0tPFG7iXYly3onUNVfV2VUcKgei5+5V/lD08Jla1evVcLkOuApH77zI56hsvYyxNdCbrSXOxuQ1H+8VV/j6JEFcz9rLZoRtjfcG7Osq/6yQERexxodcyNwPVYvCR74L79UBXynRuzHMZ5X3+FG5U4PG/wKYvArDHV4gx14RM8jvu7r4DFs1ZxyjqsbE99zMN7xj5rZ4B8Xtcd7P5OhfXFeyWF49hxXyV9aS/yTfVj1dVQ==
   </data>
  </layer>
+ <objectgroup name="Object Layer 1">
+  <object id="3" name="player" type="player" x="336" y="336" width="16" height="16"/>
+ </objectgroup>
 </map>

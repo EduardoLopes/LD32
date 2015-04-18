@@ -12,6 +12,10 @@ import flixel.util.FlxMath;
  */
 class PlayState extends FlxState
 {
+
+	public var player:Player;
+	public var level:TiledLevel;
+
 	/**
 	 * Function that is called up when to state is created to set it up.
 	 */
@@ -19,8 +23,10 @@ class PlayState extends FlxState
 	{
 		super.create();
 
+		FlxG.mouse.visible = false;
+
 				// Load the level's tilemaps
-		var level = new TiledLevel("assets/maps/map-test.tmx");
+		level = new TiledLevel("assets/maps/map.tmx");
 
 		// Add tilemaps
 		add(level.foregroundTiles);
@@ -30,10 +36,6 @@ class PlayState extends FlxState
 
 		// Add background tiles after adding level objects, so these tiles render on top of player
 		add(level.backgroundTiles);
-
-		var player = new Player(20,20);
-
-		add(player);
 	}
 
 	/**
@@ -51,5 +53,8 @@ class PlayState extends FlxState
 	override public function update():Void
 	{
 		super.update();
+
+		level.collideWithLevel(player);
+
 	}
 }
