@@ -3,6 +3,7 @@ package;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
+import flixel.FlxObject;
 import flixel.text.FlxText;
 import flixel.ui.FlxButton;
 import flixel.util.FlxMath;
@@ -54,7 +55,17 @@ class PlayState extends FlxState
 	{
 		super.update();
 
-		level.collideWithLevel(player);
+		level.collideWithLevel(player, function(p, map):Void{
+
+			switch(player.facing)
+      {
+        case FlxObject.LEFT, FlxObject.RIGHT:
+          player.animation.play("idlelr");
+        case FlxObject.UP, FlxObject.DOWN:
+          player.animation.play("idleud");
+      }
+
+		});
 
 	}
 }

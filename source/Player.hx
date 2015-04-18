@@ -18,11 +18,19 @@ class Player extends FlxSprite {
 
     setFacingFlip(FlxObject.LEFT, true, false);
     setFacingFlip(FlxObject.RIGHT, false, false);
+    setFacingFlip(FlxObject.UP, false, false);
+    setFacingFlip(FlxObject.DOWN, false, true);
 
     drag.x = drag.y = 1600;
 
     velocity.x = speed;
     velocity.y = speed;
+
+
+    animation.add('lr', [0,1], 6, false);
+    animation.add('ud', [2,3], 6, false);
+    animation.add('idlelr', [6,5,6,4], 6, false);
+    animation.add('idleud', [9,8,9,7], 6, false);
 
   }
 
@@ -72,11 +80,14 @@ class Player extends FlxSprite {
       //LEFT
       mA = 180;
 
+      facing = FlxObject.LEFT;
+
     } else if( #if flash gamepad.pressed(XboxButtonID.DPAD_RIGHT) #else gamepad.dpadRight #end || rightButton || gamepad.getXAxis(XboxButtonID.LEFT_ANALOGUE_X) > 0 ){
       goingRight = true;
       //RIGHT
       mA = 0;
 
+      facing = FlxObject.RIGHT;
     }
 
     if( #if flash gamepad.pressed(XboxButtonID.DPAD_UP) #else gamepad.dpadUp #end || upButton || gamepad.getXAxis(XboxButtonID.LEFT_ANALOGUE_Y) < 0 ){
@@ -84,18 +95,44 @@ class Player extends FlxSprite {
       //UP
       mA = -90;
       if (goingLeft)
-          mA -= 45;
+        mA -= 45;
       else if (goingRight)
-          mA += 45;
+        mA += 45;
+
+      facing = FlxObject.UP;
 
     } else if(#if flash gamepad.pressed(XboxButtonID.DPAD_DOWN) #else gamepad.dpadDown #end || downButton || gamepad.getXAxis(XboxButtonID.LEFT_ANALOGUE_Y) > 0 ){
       goingDown = true;
       //DOWN
       mA = 90;
       if (goingLeft)
-          mA += 45;
+        mA += 45;
       else if (goingRight)
-          mA -= 45;
+        mA -= 45;
+
+      facing = FlxObject.DOWN;
+    }
+
+    if ((velocity.x != 0 || velocity.y != 0) && touching == FlxObject.NONE)
+    {
+      switch(facing)
+      {
+        case FlxObject.LEFT, FlxObject.RIGHT:
+          animation.play("lr");
+        case FlxObject.UP, FlxObject.DOWN:
+          animation.play("ud");
+      }
+    }
+
+    if ((velocity.x == 0 && velocity.y == 0) && touching == FlxObject.ANY)
+    {
+      switch(facing)
+      {
+        case FlxObject.LEFT, FlxObject.RIGHT:
+          animation.play("idlelr");
+        case FlxObject.UP, FlxObject.DOWN:
+          animation.play("idleud");
+      }
     }
 
     if(goingLeft || goingRight || goingUp || goingDown)
