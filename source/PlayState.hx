@@ -84,17 +84,18 @@ class PlayState extends FlxState
 
 		});
 
-		FlxG.collide(player, enemies, function(player, enemy):Void{
+		FlxG.overlap(player, enemies, function(player, enemy):Void{
 
-			resetLevel();
+			if(FlxG.pixelPerfectOverlap(player, enemy)){
+				resetLevel();
+			}
 
 		});
 
-		FlxG.collide(bullets, enemies, function(bullet, enemy):Void{
-
-			bullet.kill();
-
+		FlxG.overlap(bullets, enemies, function(bullet, enemy):Void{
+						
 			enemy.onOff();
+			bullet.kill();
 
 		});
 

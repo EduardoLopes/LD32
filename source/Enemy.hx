@@ -45,6 +45,20 @@ class Enemy extends FlxSprite {
 
   }
 
+  private function horizontalHitbox():Void
+  {
+    width = 6;
+    height = 16;
+    offset.set(5, 0);
+  }
+
+  private function verticalHitbox():Void
+  {
+    width = 16;
+    height = 6;
+    offset.set(0, 5);
+  }
+
   public function returnToInitialPosition():Void
   {
     setPosition(initialPosition.x, initialPosition.y);
@@ -54,7 +68,7 @@ class Enemy extends FlxSprite {
     brain.activeState = idle;
   }
 
-  private function onOff():Void
+  public function onOff():Void
   {
     on = !on;
 
