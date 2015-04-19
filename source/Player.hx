@@ -162,9 +162,9 @@ class Player extends FlxSprite {
 
     shootTime += FlxG.elapsed;
 
-    if(B || gamepad.pressed(XboxButtonID.B) ){
+    if(B || gamepad.justPressed(XboxButtonID.B) ){
 
-      if(shootTime > 0.15)
+      if(Bullet.COUNT == 0)
       {
         switch(facing)
         {

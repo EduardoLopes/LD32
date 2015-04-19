@@ -117,8 +117,7 @@ class TiledLevel extends TiledMap
 			FlxG.camera.follow(PlayState.player, FlxCamera.STYLE_TOPDOWN, 6);
 
 		case "enemy":
-			var enemy = new Enemy(x, y, tilemap);
-			trace(x, y);
+			var enemy = new Enemy(x, y, tilemap);			
 			state.enemies.add(enemy);
 
 		}

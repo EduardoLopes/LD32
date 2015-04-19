@@ -43,13 +43,15 @@ class PlayState extends FlxState
 		// Add tilemaps
 		add(level.foregroundTiles);
 
-		add(bullets);
+
 		// Load player objects
 		level.loadObjects(this);
 
 		// Add background tiles after adding level objects, so these tiles render on top of player
 		add(level.backgroundTiles);
+		add(bullets);
 		add(enemies);
+
 
 	}
 
@@ -102,7 +104,7 @@ class PlayState extends FlxState
 	{
 
 		enemies.forEach(function(enemy){
-			enemy.returnToInitialPosition();			
+			enemy.returnToInitialPosition();
 		});
 
 		player.returnToInitialPosition();

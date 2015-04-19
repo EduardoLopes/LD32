@@ -88,4 +88,14 @@ class Bullet extends FlxSprite {
     COUNT--;
   }
 
+  override function update():Void
+  {
+    super.update();
+
+    if(!isOnScreen())
+    {
+      kill();
+    }
+  }
+
 }

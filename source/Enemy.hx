@@ -50,6 +50,7 @@ class Enemy extends FlxSprite {
     setPosition(initialPosition.x, initialPosition.y);
     path.cancel();
     angle = 0;
+    on = false;
   }
 
   private function onOff():Void
