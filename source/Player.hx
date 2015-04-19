@@ -11,7 +11,7 @@ import flixel.util.FlxPoint;
 
 class Player extends FlxSprite {
 
-  private var speed:Int = 200;
+  private var speed:Int = 150;
   private var shootTime:Float = 0;
   private var initialPosition:FlxPoint;
 
