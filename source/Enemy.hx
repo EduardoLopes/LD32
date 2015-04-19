@@ -51,6 +51,7 @@ class Enemy extends FlxSprite {
     path.cancel();
     angle = 0;
     on = false;
+    brain.activeState = idle;
   }
 
   private function onOff():Void

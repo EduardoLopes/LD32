@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="16" tileheight="16" nextobjectid="9">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="16" tileheight="16" nextobjectid="31">
  <tileset firstgid="1" name="tiles" tilewidth="16" tileheight="16">
   <image source="../images/tiles.png" width="160" height="80"/>
   <tile id="0"/>
@@ -71,11 +71,22 @@
    <property name="tileset" value="tiles"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJztWNuuwyAMQ0Cf9v//uz00Opabcrgk7KI8WNsqBjhOTOgjpfQIBAKBQCAQCAQCgUA36gvlheP8fPd+ZiH7P068ez8reuQf4FEAdzy+gZ9oUU5tvpWH5FOF7+XkV9Nf3mXQLMN4rC0Zd8D/cByuYc2jNua18i/hVWG9O+1XeOQBHjPcRDPkYa1Ji4eVRpJvmKMja/ZqjrFB78rp6mdVAdeHxuOgcZYcUHPUZ1Vf7RnW+w49PHjMjJnRg3mtxmV0TSs98Peq3p+ih9b78vlWlP+N6OHBg+cUf2QeBZ63/J89FnsF9D5vHpp/Cgc8i1fqyMN3eT9arLDX4rjO9Bge/RXH5o4Hnolav7SSAx55pa2Be8ced7bH8KiPHj0wH9DP8O6C9Y9ntsZxR5231sD9iXf9l1uavh71MRIbvhOxx/bofffMWo8WsGfls2SEh9d9cIQH1kWP51rdxSzzCmsaz/jR+b36K8wP7T2DjOF3EVo+lXTtBXpybaceognfAbW4tGK/oy+xmA/3uavOrWPTM9+Oe1TvXsWzeN89NfwJPPBdoXjW6HxePNCL2Je4H2S/Qm/D8zGn61lzx90CTzXGYQ8=
+   eJztWMsOwyAMQ0BP+///XQ+NZrmB8Qp7KAdrW8UAx4kJfYQQHg6Hw+FwOBwOh8PhaEY+kU4c1+en9zMK2f9x4dP7mdEj/gGPBCjx+AV+okW6tPlVHpJPGb6ni18Or7yLoFmE8VhbMu6A/+E4XGM1j1yZd5V/Ca8M65W0n+ERjTUXzZDHak16eYxoJPmGObo6dhwb9K4Y7n6WFXB9aDwOGmelOeozq6/2DOt9hx4WPEbGjOjBvGbj0rvmKj3w96ze36KH1vvy+ZaU//XoYcGD5xR/ZB4Jntf8nz0WewX0Pmsemn8KBzyLZ+rIwnd5P1qssNfiuI70GBb9FcemxAPPRK1fmskBi7zS1sC9Y4872mNY1EeLHpgP6Gd4d8H6xzNb47ijzmtr4P7Eu97llqavRX30xIbvROyxLXqXnq3WowbsWfks6eFhdR/s4YF10eK5mt4W9dEzJ9Y0nvG981v1V5gf2nsGGcPvIrR8SuHeC7Tk2k49RBO+A2pxqcV+R1+yYj7c5646Xx2blvl23KNa9yqexftuqeFv4IHvCsWzeuez4oFexL7E/SD7FXobno8x3M+aEvcVeAJ4dWEf
   </data>
  </layer>
  <objectgroup name="Object Layer 1">
   <object id="3" name="player" type="player" x="48" y="720" width="16" height="16"/>
-  <object id="6" name="enemy" type="enemy" gid="51" x="216" y="744" width="16" height="16"/>
+  <object id="6" name="enemy" type="enemy" gid="51" x="216.5" y="741.5" width="16" height="16"/>
+  <object id="20" name="enemy" type="enemy" gid="51" x="358.5" y="726.5" width="16" height="16"/>
+  <object id="21" name="enemy" type="enemy" gid="51" x="363" y="553.5" width="16" height="16"/>
+  <object id="22" name="enemy" type="enemy" gid="51" x="362" y="581.5" width="16" height="16"/>
+  <object id="23" name="enemy" type="enemy" gid="51" x="275" y="476.5" width="16" height="16"/>
+  <object id="24" name="enemy" type="enemy" gid="51" x="119.5" y="511.5" width="16" height="16"/>
+  <object id="25" name="enemy" type="enemy" gid="51" x="124.5" y="662.5" width="16" height="16"/>
+  <object id="26" name="enemy" type="enemy" gid="51" x="31" y="572" width="16" height="16"/>
+  <object id="27" name="enemy" type="enemy" gid="51" x="113" y="415.5" width="16" height="16"/>
+  <object id="28" name="enemy" type="enemy" gid="51" x="191.5" y="383" width="16" height="16"/>
+  <object id="29" name="enemy" type="enemy" gid="51" x="379.5" y="474" width="16" height="16"/>
+  <object id="30" name="enemy" type="enemy" gid="51" x="351" y="492.5" width="16" height="16"/>
  </objectgroup>
 </map>
