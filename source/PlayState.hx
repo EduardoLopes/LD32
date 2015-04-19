@@ -19,8 +19,10 @@ class PlayState extends FlxState
 	public static var player:Player;
 	public var level:TiledLevel;
 	public var collideWithMap:FlxGroup;
+	public var collideWithPlayer:FlxGroup;
 	public static var bullets:FlxTypedGroup<Bullet>;
 	public var enemies:FlxTypedGroup<Enemy>;
+	public var teleport:Teleport;
 
 	/**
 	 * Function that is called up when to state is created to set it up.
@@ -32,13 +34,14 @@ class PlayState extends FlxState
 		FlxG.mouse.visible = false;
 
 		collideWithMap = new FlxGroup();
+		collideWithPlayer = new FlxGroup();
 		bullets = new FlxTypedGroup<Bullet>();
 		enemies = new FlxTypedGroup<Enemy>();
 
 		collideWithMap.add(bullets);
 
 				// Load the level's tilemaps
-		level = new TiledLevel("assets/maps/map.tmx");
+		level = new TiledLevel("assets/maps/map-"+Reg.currentMap+".tmx");
 
 		// Add tilemaps
 		add(level.foregroundTiles);
@@ -49,6 +52,8 @@ class PlayState extends FlxState
 
 		// Add background tiles after adding level objects, so these tiles render on top of player
 		add(level.backgroundTiles);
+		add(teleport);
+		add(player);
 		add(bullets);
 		add(enemies);
 
@@ -62,6 +67,14 @@ class PlayState extends FlxState
 	override public function destroy():Void
 	{
 		super.destroy();
+
+		player = null;
+		level = null;
+		collideWithMap = null;
+		collideWithPlayer = null;
+		bullets = null;
+		enemies = null;
+		teleport = null;
 	}
 
 	/**
@@ -84,16 +97,24 @@ class PlayState extends FlxState
 
 		});
 
-		FlxG.overlap(player, enemies, function(player, enemy):Void{
+		FlxG.overlap(player, collideWithPlayer, function(player, object):Void{
 
-			if(FlxG.pixelPerfectOverlap(player, enemy)){
-				resetLevel();
+			if(Std.is(object, Enemy))
+			{
+				if(FlxG.pixelPerfectOverlap(player, object)){
+					resetLevel();
+				}
+			}
+			else if(Std.is(object, Teleport))
+			{
+				Reg.currentMap += 1;
+				FlxG.switchState(new PlayState());
 			}
 
 		});
 
 		FlxG.overlap(bullets, enemies, function(bullet, enemy):Void{
-						
+
 			enemy.onOff();
 			bullet.kill();
 

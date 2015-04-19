@@ -69,7 +69,10 @@ class TiledLevel extends TiledMap
 			tilemap.heightInTiles = height;
 			tilemap.loadMap(tileLayer.tileArray, processedPath, tileSet.tileWidth, tileSet.tileHeight, FlxTilemap.OFF, 1, 1, 1);
 
+			tilemap.setTileProperties(1, FlxObject.NONE);
 			tilemap.setTileProperties(11, FlxObject.NONE);
+			tilemap.setTileProperties(21, FlxObject.NONE);
+			tilemap.setTileProperties(31, FlxObject.NONE);
 
 			if (tileLayer.properties.contains("nocollide"))
 			{
@@ -110,15 +113,17 @@ class TiledLevel extends TiledMap
 		{
 		case "player":
 			PlayState.player = new Player(x, y);
-
 			state.collideWithMap.add(PlayState.player);
-			state.add(PlayState.player);
-
 			FlxG.camera.follow(PlayState.player, FlxCamera.STYLE_TOPDOWN, 6);
 
 		case "enemy":
-			var enemy = new Enemy(x, y, tilemap);			
+			var enemy = new Enemy(x, y, tilemap);
 			state.enemies.add(enemy);
+			state.collideWithPlayer.add(enemy);
+
+		case "teleport":
+			state.teleport = new Teleport(x, y);
+			state.collideWithPlayer.add(state.teleport);
 
 		}
 	}

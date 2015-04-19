@@ -106,7 +106,7 @@ class Enemy extends FlxSprite {
   {
     if (path.finished)
 		{
-
+      onOff();
       brain.activeState = idle;
 
 		} else {

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="16" tileheight="16" nextobjectid="52">
+ <tileset firstgid="1" name="tiles" tilewidth="16" tileheight="16">
+  <image source="../images/tiles.png" width="160" height="80"/>
+  <tile id="0"/>
+  <tile id="1"/>
+  <tile id="2"/>
+  <tile id="3"/>
+  <tile id="4"/>
+  <tile id="5"/>
+  <tile id="6"/>
+  <tile id="7"/>
+  <tile id="8"/>
+  <tile id="9"/>
+  <tile id="10"/>
+  <tile id="11"/>
+  <tile id="12"/>
+  <tile id="13"/>
+  <tile id="14"/>
+  <tile id="15"/>
+  <tile id="16"/>
+  <tile id="17"/>
+  <tile id="18"/>
+  <tile id="19"/>
+  <tile id="20"/>
+  <tile id="21"/>
+  <tile id="22"/>
+  <tile id="23"/>
+  <tile id="24"/>
+  <tile id="25"/>
+  <tile id="26"/>
+  <tile id="27"/>
+  <tile id="28"/>
+  <tile id="29"/>
+  <tile id="30"/>
+  <tile id="31"/>
+  <tile id="32"/>
+  <tile id="33"/>
+  <tile id="34"/>
+  <tile id="35"/>
+  <tile id="36"/>
+  <tile id="37"/>
+  <tile id="38"/>
+  <tile id="39"/>
+  <tile id="40"/>
+  <tile id="41"/>
+  <tile id="42"/>
+  <tile id="43"/>
+  <tile id="44"/>
+  <tile id="45"/>
+  <tile id="46"/>
+  <tile id="47"/>
+  <tile id="48"/>
+  <tile id="49"/>
+ </tileset>
+ <tileset firstgid="51" name="enemy" tilewidth="16" tileheight="16">
+  <image source="../images/enemy.png" width="160" height="16"/>
+  <tile id="0"/>
+  <tile id="1"/>
+  <tile id="2"/>
+  <tile id="3"/>
+  <tile id="4"/>
+  <tile id="5"/>
+  <tile id="6"/>
+  <tile id="7"/>
+  <tile id="8"/>
+  <tile id="9"/>
+ </tileset>
+ <tileset firstgid="61" name="teleport" tilewidth="32" tileheight="32">
+  <image source="../images/teleport.png" width="32" height="32"/>
+  <tile id="0"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="30" height="30">
+  <properties>
+   <property name="tileset" value="tiles"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJy1V0EShDAI63278P/frgeZyWaCpbY9MGqtBAgF9Nba9xK7xC/pt3xvwWejtU7PLtaM3qHuzyZRugLDwO6wYReuizWMjQO+HfY3s2O0V/nwpLNimxdwZ3io+Iv5GlcHQVzkwkk63VdywNuY35k47+R3Js7KBzw7fIZP8qtsYS5XcZUutRYxGOmKWhe5iOcf7eL6l9XD3sb+rMY583ekd7V+Z7HfmVczMXhbJ5Hj0IP1B/NAffuW32o9yfr0yN/s/Urv5tqr8g77NO99y32lXrEdgY+9AZ+remZwd81EYecpXJypUGb9feIrWw8uuW+fxOU5judZa//5YfQNxoZ7A+5TuB2+7UJfdSabiQPP8dz3K31pJa/U2dv5v5Dxy/kV19O46p9K/VepfMJ5FXOL5zWcTXA/7/kBaHophw==
+  </data>
+ </layer>
+ <objectgroup name="Object Layer 1">
+  <object id="3" name="player" type="player" x="400" y="80" width="16" height="16"/>
+  <object id="32" name="Teleport" type="teleport" gid="61" x="16" y="464" width="32" height="32"/>
+  <object id="34" type="enemy" gid="51" x="344" y="192.667" width="16" height="16"/>
+  <object id="35" type="enemy" gid="51" x="280" y="192.667" width="16" height="16"/>
+  <object id="37" type="enemy" gid="51" x="170" y="112.667" width="16" height="16"/>
+  <object id="38" type="enemy" gid="51" x="104" y="111.333" width="16" height="16"/>
+  <object id="39" type="enemy" gid="51" x="127.333" y="37.3333" width="16" height="16"/>
+  <object id="40" type="enemy" gid="51" x="125.333" y="52.6667" width="16" height="16"/>
+  <object id="41" type="enemy" gid="51" x="175.333" y="376.667" width="16" height="16"/>
+  <object id="42" type="enemy" gid="51" x="270.667" y="342.667" width="16" height="16"/>
+  <object id="43" type="enemy" gid="51" x="176" y="455.333" width="16" height="16"/>
+  <object id="44" type="enemy" gid="51" x="63.3333" y="424" width="16" height="16"/>
+  <object id="45" type="enemy" gid="51" x="62.6667" y="440" width="16" height="16"/>
+  <object id="46" type="enemy" gid="51" x="61.3333" y="456" width="16" height="16"/>
+  <object id="47" type="enemy" gid="51" x="99.3333" y="173.333" width="16" height="16"/>
+  <object id="48" type="enemy" gid="51" x="28.6667" y="206" width="16" height="16"/>
+  <object id="49" type="enemy" gid="51" x="70.6667" y="218.667" width="16" height="16"/>
+  <object id="50" type="enemy" gid="51" x="36.6667" y="270" width="16" height="16"/>
+  <object id="51" type="enemy" gid="51" x="58" y="350.667" width="16" height="16"/>
+ </objectgroup>
+</map>

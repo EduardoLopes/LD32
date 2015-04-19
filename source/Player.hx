@@ -85,8 +85,7 @@ class Player extends FlxSprite {
     Y = FlxG.keys.anyPressed(["L"]);
 
     var mA:Float = 0;
-
-
+    
     if( #if flash gamepad.pressed(XboxButtonID.DPAD_LEFT) #else gamepad.dpadLeft #end || leftButton || gamepad.getXAxis(XboxButtonID.LEFT_ANALOGUE_X) < 0 ){
       goingLeft = true;
       //LEFT
