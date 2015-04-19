@@ -110,7 +110,7 @@ class PlayState extends FlxState
 				Reg.currentMap += 1;
 
 				if(Reg.currentMap >= 5){
-					FlxG.switchState(new FinishState());
+					FlxG.switchState(new EndState());
 					return;
 				}
 

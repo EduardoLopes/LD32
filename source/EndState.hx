@@ -15,7 +15,7 @@ import flixel.util.FlxSpriteUtil;
 /**
  * A FlxState which can be used for the actual gameplay.
  */
-class FinishState extends FlxState
+class EndState extends FlxState
 {
 
   private var gamepad(get, never):FlxGamepad;
