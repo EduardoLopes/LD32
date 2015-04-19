@@ -141,4 +141,13 @@ class TiledLevel extends TiledMap
 		}
 		return false;
 	}
+
+	private function destroy():Void{
+		
+		tilemap = null;
+		collidableTileLayers = null;
+		backgroundTiles = null;
+		foregroundTiles = null;
+
+	}
 }

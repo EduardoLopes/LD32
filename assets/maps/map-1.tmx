@@ -75,21 +75,21 @@
    <property name="tileset" value="tiles"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJy1l1GOwzAIRN1A7n/lbaVYejsdXDtuP1AiYjMYBkyitRaXHE85L3m95/WkPi59Yp/KAUljP/FOeyf2OVvUn+2/r8TPgfQ9fO84fQ2xGItTsBmbLNaF4D2MRKFfFfWPfn3D/giX8c0buDsxYJ76ufmN30N0I470/Fa4zHUIbm7G1O0nx1hDv8alsDaUA7scmsHVdbvc/nRe5thxjnrtB2H2zZ6XudbzpsEN6JUTLo7kD89Y4bp60N496nEz4vLr4ncIrqvpVe4pjypcvYO0b6xyT311vusdwn72qUc5CbNn1H/1PuPdTb7pfe1w9XwjXNrL9s63KqaV/yt50XpgzVTcrXi6wkPe2zprzOKu1oDmdWa/i+eo341wO7bjxwwuey1jqHMd50Ouqepfe52L/ercorOnw6VNFw/XJ3dFfal49e1ZcsaezlYrtnusFGemPu7gcua+Oyex12ov0v8e93+m3Gc/Odp7rdPXP9bSB2c=
+   eJy1l+GOxCAIhN1C3/+V7y6pyXezg9W6+4O0scIIDEijtRaXHL9yXvL3nteT63GtJ/RUDkga+4l32juh52xx/Wz/z0r8HEjX4XvH6XuIxVicgs3YZLEvBO9lJIr1VdHz8VyfsD/CZXzzAe5ODJin7je/8XvI2ogjPb8VLnMdgpubMXX65Bhr6Nu4FNaGcmCXQzO4um+X23f+MseOc1zXfhBGb9Zf5lr9TYMbWFdOuDiSP/SxwnX1oL171ONmxOXXxe8QXFfTq9yjXxpfx33XP1Z973p3fNQ7hP3srkc5CaMz6r96n/HuJt/0vna46t8Il/ayvfOtiml1/pW8aD2wZiruVjxd4SHvbZ01ZnFXa0DzOqPv4jnqdyPcju34MYPLXssY6lzH+ZB7XHy1Rqp+sDq36OzpcGnTxcP1yV3Rs1S8+vQsOWNPZ6sV2z1WijNTH09wOXM/nZPYa7UX6X+P+z9T7rOfHO291nnWH+vGB2o=
   </data>
  </layer>
  <objectgroup name="Object Layer 1">
   <object id="3" name="player" type="player" x="48" y="400" width="16" height="16"/>
-  <object id="6" name="enemy" type="enemy" gid="51" x="216.5" y="421.5" width="16" height="16"/>
+  <object id="6" name="enemy" type="enemy" gid="51" x="215.5" y="424.5" width="16" height="16"/>
   <object id="20" name="enemy" type="enemy" gid="51" x="358.5" y="406.5" width="16" height="16"/>
   <object id="21" name="enemy" type="enemy" gid="51" x="363" y="233.5" width="16" height="16"/>
   <object id="22" name="enemy" type="enemy" gid="51" x="362" y="261.5" width="16" height="16"/>
   <object id="23" name="enemy" type="enemy" gid="51" x="275" y="156.5" width="16" height="16"/>
   <object id="24" name="enemy" type="enemy" gid="51" x="119.5" y="191.5" width="16" height="16"/>
   <object id="25" name="enemy" type="enemy" gid="51" x="124.5" y="342.5" width="16" height="16"/>
-  <object id="26" name="enemy" type="enemy" gid="51" x="31" y="252" width="16" height="16"/>
-  <object id="27" name="enemy" type="enemy" gid="51" x="113" y="95.5" width="16" height="16"/>
-  <object id="28" name="enemy" type="enemy" gid="51" x="191.5" y="63" width="16" height="16"/>
+  <object id="26" name="enemy" type="enemy" gid="51" x="22" y="258" width="16" height="16"/>
+  <object id="27" name="enemy" type="enemy" gid="51" x="112" y="88.5" width="16" height="16"/>
+  <object id="28" name="enemy" type="enemy" gid="51" x="189.5" y="72" width="16" height="16"/>
   <object id="29" name="enemy" type="enemy" gid="51" x="379.5" y="154" width="16" height="16"/>
   <object id="30" name="enemy" type="enemy" gid="51" x="351" y="172.5" width="16" height="16"/>
   <object id="32" name="Teleport" type="teleport" gid="61" x="400" y="112" width="32" height="32"/>

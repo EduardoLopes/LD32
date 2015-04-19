@@ -108,6 +108,12 @@ class PlayState extends FlxState
 			else if(Std.is(object, Teleport))
 			{
 				Reg.currentMap += 1;
+
+				if(Reg.currentMap >= 5){
+					FlxG.switchState(new FinishState());
+					return;
+				}
+
 				FlxG.switchState(new PlayState());
 			}
 

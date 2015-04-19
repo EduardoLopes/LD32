@@ -75,7 +75,7 @@
    <property name="tileset" value="tiles"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJy1V0EShDAI63278P/frgeZyWaCpbY9MGqtBAgF9Nba9xK7xC/pt3xvwWejtU7PLtaM3qHuzyZRugLDwO6wYReuizWMjQO+HfY3s2O0V/nwpLNimxdwZ3io+Iv5GlcHQVzkwkk63VdywNuY35k47+R3Js7KBzw7fIZP8qtsYS5XcZUutRYxGOmKWhe5iOcf7eL6l9XD3sb+rMY583ekd7V+Z7HfmVczMXhbJ5Hj0IP1B/NAffuW32o9yfr0yN/s/Urv5tqr8g77NO99y32lXrEdgY+9AZ+remZwd81EYecpXJypUGb9feIrWw8uuW+fxOU5judZa//5YfQNxoZ7A+5TuB2+7UJfdSabiQPP8dz3K31pJa/U2dv5v5Dxy/kV19O46p9K/VepfMJ5FXOL5zWcTXA/7/kBaHophw==
+   eJy1V0EShDAI63278P/frgeZyWaCbS09MGqtBAgF9Nba9xK7xC/pt3xvwWejtU7PLtaM3qHuT5EoXYFhYHfYUIXrYg1j44Bvh/3N7BjtVT486ZyxzSdwV3iY8RfzNa4OgrjIhZN0up/JAW9jflfiXMnvSpyVD3h2+Ayf5FfZwlzu4ipdai1iMNIVtS5yEc8/2sX1L6uHvY392Y1z5u9I7279zmJfmVcrMXhbJ5Hj0IP1B/NAffuW39l6kvXpkb/Z+53ezbVX5R32ad77lvuZesV2BD72Bnye1bOCWzUThZ2ncHGmQln194mvbD245L59EpfnOJ5nrf3nh9E3GBvuDbhP4Xb4tpO+U/zyHL/S9yvySp29yv+FjF/Or7iexlX/VOq/SuUTzquYWzyv4WyC+3nPD13OKYI=
   </data>
  </layer>
  <objectgroup name="Object Layer 1">
@@ -97,6 +97,6 @@
   <object id="48" type="enemy" gid="51" x="28.6667" y="206" width="16" height="16"/>
   <object id="49" type="enemy" gid="51" x="70.6667" y="218.667" width="16" height="16"/>
   <object id="50" type="enemy" gid="51" x="36.6667" y="270" width="16" height="16"/>
-  <object id="51" type="enemy" gid="51" x="58" y="350.667" width="16" height="16"/>
+  <object id="51" type="enemy" gid="51" x="116.667" y="258" width="16" height="16"/>
  </objectgroup>
 </map>
