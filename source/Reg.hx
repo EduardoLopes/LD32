@@ -35,5 +35,5 @@ class Reg
 	 */
 	public static var saves:Array<FlxSave> = [];
 
-	public static var currentMap:Int = 4;
+	public static var currentMap:Int = 1;
 }
