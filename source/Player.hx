@@ -6,15 +6,22 @@ import flixel.input.gamepad.FlxGamepad;
 import flixel.input.gamepad.XboxButtonID;
 import flixel.FlxG;
 import flixel.util.FlxAngle;
+import flixel.util.FlxAngle;
+import flixel.util.FlxPoint;
 
 class Player extends FlxSprite {
 
   private var speed:Int = 200;
   private var shootTime:Float = 0;
+  private var initialPosition:FlxPoint;
+
 
   public function new (x:Float = 0, y:Float = 0){
 
     super(x, y);
+
+    initialPosition = new FlxPoint(x,y);
+
     loadGraphic(AssetPaths.player__png, true, 16, 16);
 
     setFacingFlip(FlxObject.LEFT, true, false);
@@ -27,12 +34,16 @@ class Player extends FlxSprite {
     velocity.x = speed;
     velocity.y = speed;
 
-
     animation.add('lr', [0,1], 6, false);
     animation.add('ud', [2,3], 6, false);
     animation.add('idlelr', [6,5,6,4], 6, false);
     animation.add('idleud', [9,8,9,7], 6, false);
 
+  }
+
+  public function returnToInitialPosition():Void
+  {
+    setPosition(initialPosition.x, initialPosition.y);
   }
 
   private var gamepad(get, never):FlxGamepad;

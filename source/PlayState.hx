@@ -16,10 +16,11 @@ import flixel.util.FlxMath;
 class PlayState extends FlxState
 {
 
-	public var player:Player;
+	public static var player:Player;
 	public var level:TiledLevel;
 	public var collideWithMap:FlxGroup;
 	public static var bullets:FlxTypedGroup<Bullet>;
+	public var enemies:FlxTypedGroup<Enemy>;
 
 	/**
 	 * Function that is called up when to state is created to set it up.
@@ -32,6 +33,8 @@ class PlayState extends FlxState
 
 		collideWithMap = new FlxGroup();
 		bullets = new FlxTypedGroup<Bullet>();
+		enemies = new FlxTypedGroup<Enemy>();
+
 		collideWithMap.add(bullets);
 
 				// Load the level's tilemaps
@@ -46,6 +49,7 @@ class PlayState extends FlxState
 
 		// Add background tiles after adding level objects, so these tiles render on top of player
 		add(level.backgroundTiles);
+		add(enemies);
 
 	}
 
@@ -77,6 +81,31 @@ class PlayState extends FlxState
 			}
 
 		});
+
+		FlxG.collide(player, enemies, function(player, enemy):Void{
+
+			resetLevel();
+
+		});
+
+		FlxG.collide(bullets, enemies, function(bullet, enemy):Void{
+
+			bullet.kill();
+
+			enemy.onOff();
+
+		});
+
+	}
+
+	private function resetLevel():Void
+	{
+
+		enemies.forEach(function(enemy){
+			enemy.returnToInitialPosition();			
+		});
+
+		player.returnToInitialPosition();
 
 	}
 

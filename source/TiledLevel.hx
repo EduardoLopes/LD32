@@ -29,6 +29,7 @@ class TiledLevel extends TiledMap
 	public var foregroundTiles:FlxGroup;
 	public var backgroundTiles:FlxGroup;
 	private var collidableTileLayers:Array<FlxTilemap>;
+	public var tilemap:FlxTilemap;
 
 	public function new(tiledLevel:Dynamic)
 	{
@@ -63,7 +64,7 @@ class TiledLevel extends TiledMap
 			var imagePath 		= new Path(tileSet.imageSource);
 			var processedPath 	= c_PATH_LEVEL_TILESHEETS + imagePath.file + "." + imagePath.ext;
 
-			var tilemap:FlxTilemap = new FlxTilemap();
+			tilemap = new FlxTilemap();
 			tilemap.widthInTiles = width;
 			tilemap.heightInTiles = height;
 			tilemap.loadMap(tileLayer.tileArray, processedPath, tileSet.tileWidth, tileSet.tileHeight, FlxTilemap.OFF, 1, 1, 1);
@@ -108,12 +109,18 @@ class TiledLevel extends TiledMap
 		switch (o.type.toLowerCase())
 		{
 		case "player":
-			state.player = new Player(x, y);
+			PlayState.player = new Player(x, y);
 
-			state.collideWithMap.add(state.player);
-			state.add(state.player);
+			state.collideWithMap.add(PlayState.player);
+			state.add(PlayState.player);
 
-			FlxG.camera.follow(state.player, FlxCamera.STYLE_TOPDOWN, 6);
+			FlxG.camera.follow(PlayState.player, FlxCamera.STYLE_TOPDOWN, 6);
+
+		case "enemy":
+			var enemy = new Enemy(x, y, tilemap);
+			trace(x, y);
+			state.enemies.add(enemy);
+
 		}
 	}
 
