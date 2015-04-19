@@ -65,35 +65,30 @@ class Player extends FlxSprite {
     var downButton:Bool = false;
     var leftButton:Bool = false;
     var rightButton:Bool = false;
-    var A:Bool = false;
-    var B:Bool = false;
-    var X:Bool = false;
-    var Y:Bool = false;
 
     var goingUp:Bool = false;
     var goingDown:Bool = false;
     var goingLeft:Bool = false;
     var goingRight:Bool = false;
 
+    var B:Bool = false;
+
     upButton = FlxG.keys.anyPressed(["UP", "W", "Z"]);
     downButton = FlxG.keys.anyPressed(["DOWN", "S"]);
     leftButton = FlxG.keys.anyPressed(["LEFT", "A", "Q"]);
     rightButton = FlxG.keys.anyPressed(["RIGHT", "D"]);
-    A = FlxG.keys.anyPressed(["H"]);
-    B = FlxG.keys.anyPressed(["J"]);
-    X = FlxG.keys.anyPressed(["K"]);
-    Y = FlxG.keys.anyPressed(["L"]);
+    B = FlxG.keys.anyJustPressed(["J"]);
 
     var mA:Float = 0;
-    
-    if( #if flash gamepad.pressed(XboxButtonID.DPAD_LEFT) #else gamepad.dpadLeft #end || leftButton || gamepad.getXAxis(XboxButtonID.LEFT_ANALOGUE_X) < 0 ){
+
+    if( #if !flash gamepad.dpadLeft || #end leftButton || gamepad.getXAxis(XboxButtonID.LEFT_ANALOGUE_X) < 0 ){
       goingLeft = true;
       //LEFT
       mA = 180;
 
       facing = FlxObject.LEFT;
 
-    } else if( #if flash gamepad.pressed(XboxButtonID.DPAD_RIGHT) #else gamepad.dpadRight #end || rightButton || gamepad.getXAxis(XboxButtonID.LEFT_ANALOGUE_X) > 0 ){
+    } else if( #if !flash gamepad.dpadRight || #end rightButton || gamepad.getXAxis(XboxButtonID.LEFT_ANALOGUE_X) > 0 ){
       goingRight = true;
       //RIGHT
       mA = 0;
@@ -101,7 +96,7 @@ class Player extends FlxSprite {
       facing = FlxObject.RIGHT;
     }
 
-    if( #if flash gamepad.pressed(XboxButtonID.DPAD_UP) #else gamepad.dpadUp #end || upButton || gamepad.getXAxis(XboxButtonID.LEFT_ANALOGUE_Y) < 0 ){
+    if( #if !flash gamepad.dpadUp || #end upButton || gamepad.getXAxis(XboxButtonID.LEFT_ANALOGUE_Y) < 0 ){
       goingUp = true;
       //UP
       mA = -90;
@@ -112,7 +107,7 @@ class Player extends FlxSprite {
 
       facing = FlxObject.UP;
 
-    } else if(#if flash gamepad.pressed(XboxButtonID.DPAD_DOWN) #else gamepad.dpadDown #end || downButton || gamepad.getXAxis(XboxButtonID.LEFT_ANALOGUE_Y) > 0 ){
+    } else if(#if !flash gamepad.dpadDown || #end downButton || gamepad.getXAxis(XboxButtonID.LEFT_ANALOGUE_Y) > 0 ){
       goingDown = true;
       //DOWN
       mA = 90;
@@ -151,14 +146,6 @@ class Player extends FlxSprite {
       FlxAngle.rotatePoint(speed, 0, 0, 0, mA, velocity);
     }
 
-
-
-    if(A || gamepad.pressed(XboxButtonID.A) ){
-
-      //A
-
-    }
-
     shootTime += FlxG.elapsed;
 
     if(B || gamepad.justPressed(XboxButtonID.B) ){
@@ -181,18 +168,6 @@ class Player extends FlxSprite {
             shootTime = 0;
         }
       }
-
-    }
-
-    if(X || gamepad.pressed(XboxButtonID.X) ){
-
-      //X
-
-    }
-
-    if(Y || gamepad.pressed(XboxButtonID.Y) ){
-
-      //Y
 
     }
 
