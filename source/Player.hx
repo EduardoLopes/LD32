@@ -10,6 +10,7 @@ import flixel.util.FlxAngle;
 class Player extends FlxSprite {
 
   private var speed:Int = 200;
+  private var shootTime:Float = 0;
 
   public function new (x:Float = 0, y:Float = 0){
 
@@ -148,9 +149,28 @@ class Player extends FlxSprite {
 
     }
 
+    shootTime += FlxG.elapsed;
+
     if(B || gamepad.pressed(XboxButtonID.B) ){
 
-      //B
+      if(shootTime > 0.15)
+      {
+        switch(facing)
+        {
+          case FlxObject.LEFT:
+            PlayState.bullets.recycle(Bullet).shootLeft(getMidpoint().x,getMidpoint().y);
+            shootTime = 0;
+          case FlxObject.RIGHT:
+            PlayState.bullets.recycle(Bullet).shootRight(getMidpoint().x,getMidpoint().y);
+            shootTime = 0;
+          case FlxObject.UP:
+            PlayState.bullets.recycle(Bullet).shootUp(getMidpoint().x,getMidpoint().y);
+            shootTime = 0;
+          case FlxObject.DOWN:
+            PlayState.bullets.recycle(Bullet).shootDown(getMidpoint().x,getMidpoint().y);
+            shootTime = 0;
+        }
+      }
 
     }
 

@@ -3,6 +3,7 @@ package;
 import openfl.Assets;
 import haxe.io.Path;
 import haxe.xml.Parser;
+import flixel.FlxBasic;
 import flixel.FlxG;
 import flixel.FlxObject;
 import flixel.FlxSprite;
@@ -108,13 +109,15 @@ class TiledLevel extends TiledMap
 		{
 		case "player":
 			state.player = new Player(x, y);
+
+			state.collideWithMap.add(state.player);
 			state.add(state.player);
 
 			FlxG.camera.follow(state.player, FlxCamera.STYLE_TOPDOWN, 6);
 		}
 	}
 
-	public function collideWithLevel(obj:FlxObject, ?notifyCallback:FlxObject->FlxObject->Void, ?processCallback:FlxObject->FlxObject->Bool):Bool
+	public function collideWithLevel(obj:FlxBasic, ?notifyCallback:FlxObject->FlxObject->Void, ?processCallback:FlxObject->FlxObject->Bool):Bool
 	{
 		if (collidableTileLayers != null)
 		{

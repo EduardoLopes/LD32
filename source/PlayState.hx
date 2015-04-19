@@ -4,6 +4,8 @@ import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.FlxObject;
+import flixel.group.FlxGroup;
+import flixel.group.FlxTypedGroup;
 import flixel.text.FlxText;
 import flixel.ui.FlxButton;
 import flixel.util.FlxMath;
@@ -16,6 +18,8 @@ class PlayState extends FlxState
 
 	public var player:Player;
 	public var level:TiledLevel;
+	public var collideWithMap:FlxGroup;
+	public static var bullets:FlxTypedGroup<Bullet>;
 
 	/**
 	 * Function that is called up when to state is created to set it up.
@@ -26,17 +30,23 @@ class PlayState extends FlxState
 
 		FlxG.mouse.visible = false;
 
+		collideWithMap = new FlxGroup();
+		bullets = new FlxTypedGroup<Bullet>();
+		collideWithMap.add(bullets);
+
 				// Load the level's tilemaps
 		level = new TiledLevel("assets/maps/map.tmx");
 
 		// Add tilemaps
 		add(level.foregroundTiles);
 
+		add(bullets);
 		// Load player objects
 		level.loadObjects(this);
 
 		// Add background tiles after adding level objects, so these tiles render on top of player
 		add(level.backgroundTiles);
+
 	}
 
 	/**
@@ -55,17 +65,35 @@ class PlayState extends FlxState
 	{
 		super.update();
 
-		level.collideWithLevel(player, function(p, map):Void{
+		level.collideWithLevel(collideWithMap, function(map, object):Void{
 
-			switch(player.facing)
-      {
-        case FlxObject.LEFT, FlxObject.RIGHT:
-          player.animation.play("idlelr");
-        case FlxObject.UP, FlxObject.DOWN:
-          player.animation.play("idleud");
-      }
+			if(Std.is(object, Player))
+			{
+				playerCollideMap();
+			}
+			else if(Std.is(object, Bullet))
+			{
+				bulletCollideMap(object);
+			}
 
 		});
 
 	}
+
+	private function playerCollideMap():Void
+	{
+		switch(player.facing)
+		{
+			case FlxObject.LEFT, FlxObject.RIGHT:
+				player.animation.play("idlelr");
+			case FlxObject.UP, FlxObject.DOWN:
+				player.animation.play("idleud");
+		}
+	}
+
+	private function bulletCollideMap(bullet:FlxObject):Void
+	{
+		bullet.kill();
+	}
+
 }
